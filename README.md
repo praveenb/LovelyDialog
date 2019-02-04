@@ -1,3 +1,7 @@
+Applied minor changes
+[![](https://jitpack.io/v/praveenb/LovelyDialog.svg)](https://jitpack.io/#praveenb/LovelyDialog)
+
+
 # LovelyDialog
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LovelyDialog-green.svg?style=true)](https://android-arsenal.com/details/1/3452)
 
