@@ -3,16 +3,24 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-        classpath 'com.novoda:bintray-release:0.3.4'
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
@@ -21,11 +29,3 @@ task clean(type: Delete) {
 }
 
 
-ext {
-    userOrg = 'yarolegovich'
-    groupId = 'com.yarolegovich'
-    uploadName = 'LovelyDialog'
-    description = 'This library is a set of simple wrapper classes that are aimed to help you easily create fancy dialogs.'
-    publishVersion = '1.0.7'
-    licences = ['Apache-2.0']
-}
