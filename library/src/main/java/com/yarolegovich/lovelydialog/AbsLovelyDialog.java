@@ -2,7 +2,6 @@ package com.yarolegovich.lovelydialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -16,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -50,6 +50,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
         titleView = findView(R.id.ld_title);
         messageView = findView(R.id.ld_message);
         topTitleView = findView(R.id.ld_top_title);
+
     }
 
     @LayoutRes
@@ -87,6 +88,11 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
 
     public T setTopTitleColor(int color) {
         topTitleView.setTextColor(color);
+        return (T) this;
+    }
+
+    public T setMessageColor(int color) {
+        messageView.setTextColor(color);
         return (T) this;
     }
 
@@ -130,6 +136,15 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
 
     public T setTopColorRes(@ColorRes int topColoRes) {
         return setTopColor(color(topColoRes));
+    }
+
+    public T setMessageBgColor(@ColorInt int messageBgColor) {
+        findView(R.id.ld_msg_area).setBackgroundColor(messageBgColor);
+        return (T) this;
+    }
+
+    public T setMessageBgColorRes(@ColorRes int messageBgColorRes) {
+        return setTopColor(color(messageBgColorRes));
     }
 
     /*
