@@ -91,6 +91,12 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
         return (T) this;
     }
 
+    public T setTitleColor(int color) {
+        if (color != -1)
+            titleView.setTextColor(color);
+        return (T) this;
+    }
+
     public T setMessageColor(int color) {
         if (color != -1)
             messageView.setTextColor(color);
