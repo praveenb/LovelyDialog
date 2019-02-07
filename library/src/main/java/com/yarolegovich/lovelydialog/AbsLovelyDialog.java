@@ -86,12 +86,14 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     }
 
     public T setTopTitleColor(int color) {
-        topTitleView.setTextColor(color);
+        if (color != -1)
+            topTitleView.setTextColor(color);
         return (T) this;
     }
 
     public T setMessageColor(int color) {
-        messageView.setTextColor(color);
+        if (color != -1)
+            messageView.setTextColor(color);
         return (T) this;
     }
 
@@ -129,7 +131,8 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     }
 
     public T setTopColor(@ColorInt int topColor) {
-        findView(R.id.ld_color_area).setBackgroundColor(topColor);
+        if (topColor != -1)
+            findView(R.id.ld_color_area).setBackgroundColor(topColor);
         return (T) this;
     }
 
@@ -138,7 +141,8 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     }
 
     public T setMessageBgColor(@ColorInt int messageBgColor) {
-        findView(R.id.ld_msg_area).setBackgroundColor(messageBgColor);
+        if (messageBgColor != -1)
+            findView(R.id.ld_msg_area).setBackgroundColor(messageBgColor);
         return (T) this;
     }
 
