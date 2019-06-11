@@ -30,6 +30,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
 
     private ImageView iconView;
     private TextView topTitleView;
+    private TextView topMessageCode;
     private TextView titleView;
     private TextView messageView;
 
@@ -49,6 +50,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
         titleView = findView(R.id.ld_title);
         messageView = findView(R.id.ld_message);
         topTitleView = findView(R.id.ld_top_title);
+        topMessageCode = findView(R.id.ld_top_code);
 
     }
 
@@ -94,6 +96,18 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     public T setTitleColor(int color) {
         if (color != -1)
             titleView.setTextColor(color);
+        return (T) this;
+    }
+
+    public T setTopMessageCode(CharSequence title) {
+        topMessageCode.setVisibility(View.VISIBLE);
+        topMessageCode.setText(title);
+        return (T) this;
+    }
+
+    public T setTopMessageCodeColor(int color) {
+        if (color != -1)
+            topMessageCode.setTextColor(color(color));
         return (T) this;
     }
 

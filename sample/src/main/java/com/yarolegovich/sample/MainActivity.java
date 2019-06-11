@@ -166,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new LovelyChoiceDialog(this, R.style.CheckBoxTintTheme)
                 .setTopColorRes(R.color.darkRed)
                 .setTitle(R.string.order_food_title)
+                .setTopMessageCode("Testing")
+                .setTopMessageCodeColor(R.color.white)
                 .setIcon(R.drawable.ic_food_white_36dp)
                 .setInstanceStateHandler(ID_MULTI_CHOICE_DIALOG, saveStateHandler)
                 .setItemsMultiChoice(items, new LovelyChoiceDialog.OnItemsSelectedListener<String>() {
