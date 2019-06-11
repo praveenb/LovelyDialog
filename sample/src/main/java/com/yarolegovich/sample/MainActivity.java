@@ -167,6 +167,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setTopColorRes(R.color.darkRed)
                 .setTitle(R.string.order_food_title)
                 .setTopMessageCode("Testing")
+                .setTopTitle("Hello Testing")
+                .setTopTitleColor(R.color.white)
                 .setTopMessageCodeColor(R.color.white)
                 .setIcon(R.drawable.ic_food_white_36dp)
                 .setInstanceStateHandler(ID_MULTI_CHOICE_DIALOG, saveStateHandler)
