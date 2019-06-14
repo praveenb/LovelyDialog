@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private LovelySaveStateHandler saveStateHandler;
 
+    String value ="No results have been found. Please try again.\nTip: This may mean that the data has not been added to Mo:Dus yet.";
     @Override
     @SuppressWarnings("ConstantConditions")
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setTitle(R.string.rate_title)
                 .setInstanceStateHandler(ID_STANDARD_DIALOG, saveStateHandler)
                 .setSavedInstanceState(savedInstanceState)
-                .setMessage(R.string.rate_message)
+                .setMessage(value)
                 .setPositiveButton(android.R.string.ok, LovelyDialogCompat.wrap(new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -152,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setNotShowAgainOptionChecked(true)
                 .setSavedInstanceState(savedInstanceState)
                 .setTitle(R.string.info_title)
-                .setMessage(R.string.info_message)
+                .setMessage("No results have been found. Please try again.\nTip: This may mean that the data has not been added to Mo:Dus yet.")
                 .show();
     }
 
