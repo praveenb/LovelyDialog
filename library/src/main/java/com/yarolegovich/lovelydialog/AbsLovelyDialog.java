@@ -31,6 +31,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     private ImageView iconView;
     private TextView topTitleView;
     private TextView topMessageCode;
+    private ImageView topIconView;
     private TextView titleView;
     private TextView messageView;
 
@@ -51,6 +52,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
         messageView = findView(R.id.ld_message);
         topTitleView = findView(R.id.ld_top_title);
         topMessageCode = findView(R.id.ld_top_code);
+        topIconView = findView(R.id.ld_top_icon);
 
     }
 
@@ -132,6 +134,24 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     public T setIcon(@DrawableRes int iconRes) {
         iconView.setVisibility(View.VISIBLE);
         iconView.setImageResource(iconRes);
+        return (T) this;
+    }
+
+    public T setTopIcon(Bitmap bitmap) {
+        topIconView.setVisibility(View.VISIBLE);
+        topIconView.setImageBitmap(bitmap);
+        return (T) this;
+    }
+
+    public T setTopIcon(Drawable drawable) {
+        topIconView.setVisibility(View.VISIBLE);
+        topIconView.setImageDrawable(drawable);
+        return (T) this;
+    }
+
+    public T setTopIcon(@DrawableRes int iconRes) {
+        topIconView.setVisibility(View.VISIBLE);
+        topIconView.setImageResource(iconRes);
         return (T) this;
     }
 
