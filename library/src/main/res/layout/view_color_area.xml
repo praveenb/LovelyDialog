@@ -27,7 +27,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:textSize="14sp"
-            android:visibility="gone"/>
+            android:visibility="invisible"/>
     </RelativeLayout>
 
     <ImageView
