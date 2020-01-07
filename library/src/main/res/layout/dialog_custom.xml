@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" android:id="@+id/ld_msg_area">
+    android:orientation="vertical"
+    android:id="@+id/ld_msg_area"
+    android:weightSum="1">
 
     <include layout="@layout/view_color_area"/>
 
@@ -30,5 +32,12 @@
 
         </LinearLayout>
     </ScrollView>
-
+    <Button
+        android:id="@+id/ld_btn_confirm"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@android:string/ok"
+        android:visibility="gone"/>
 </LinearLayout>
