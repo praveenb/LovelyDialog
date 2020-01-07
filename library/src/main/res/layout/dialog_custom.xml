@@ -32,12 +32,29 @@
 
         </LinearLayout>
     </ScrollView>
-    <Button
-        android:id="@+id/ld_btn_confirm"
-        style="?android:borderlessButtonStyle"
+    <Space
         android:layout_width="wrap_content"
+        android:layout_height="12dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="@android:string/ok"
-        android:visibility="gone"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/ld_btn_cancel"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="start"
+            android:text="@android:string/cancel"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/ld_btn_confirm"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@android:string/ok"
+            android:visibility="gone"/>
+    </RelativeLayout>
 </LinearLayout>
