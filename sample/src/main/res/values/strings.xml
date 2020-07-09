@@ -20,6 +20,7 @@
 
     <string name="btn_standard_dialog">Standard dialog</string>
     <string name="btn_text_input_dialog">Text input dialog</string>
+    <string name="btn_multiline_text_input_dialog">Multiline Text input dialog</string>
     <string name="btn_single_choice_dialog">Single choice dialog</string>
     <string name="btn_multi_choice_dialog">Multi choice dialog</string>
     <string name="btn_info_dialog">Info dialog</string>

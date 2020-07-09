@@ -56,4 +56,12 @@
         android:text="@string/btn_progress_dialog"
         app:backgroundTint="@color/teal" />
 
+ <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_multiline_input"
+        style="@style/DialogTriggerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_multiline_text_input_dialog"
+        app:backgroundTint="@color/primaryText" />
+
 </LinearLayout>

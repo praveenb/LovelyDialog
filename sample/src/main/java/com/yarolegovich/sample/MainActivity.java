@@ -1,7 +1,6 @@
 package com.yarolegovich.sample;
 
 import android.content.DialogInterface;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +15,7 @@ import com.yarolegovich.lovelydialog.LovelyProgressDialog;
 import com.yarolegovich.lovelydialog.LovelyStandardDialog;
 import com.yarolegovich.lovelydialog.LovelyTextInputDialog;
 import com.yarolegovich.lovelydialog.LovelySaveStateHandler;
+import com.yarolegovich.lovelydialog.LovelyTextInputMultilineDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int ID_INFO_DIALOG = R.id.btn_info_dialog;
     private static final int ID_MULTI_CHOICE_DIALOG = R.id.btn_multi_choice_dialog;
     private static final int ID_TEXT_INPUT_DIALOG = R.id.btn_text_input_dialog;
+    private static final int ID_MULTI_TEXT_INPUT_DIALOG = R.id.btn_multiline_input;
     private static final int ID_PROGRESS_DIALOG = R.id.btn_progress_dialog;
 
     /*
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private LovelySaveStateHandler saveStateHandler;
 
-    String value ="No results have been found. Please try again.\nTip: This may mean that the data has not been added to Mo:Dus yet.";
+    String value = "No results have been found. Please try again.\nTip: This may mean that the data has not been added to Mo:Dus yet.";
+
     @Override
     @SuppressWarnings("ConstantConditions")
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_multi_choice_dialog).setOnClickListener(this);
         findViewById(R.id.btn_text_input_dialog).setOnClickListener(this);
         findViewById(R.id.btn_progress_dialog).setOnClickListener(this);
+        findViewById(R.id.btn_multiline_input).setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case ID_PROGRESS_DIALOG:
                 showProgressDialog(savedInstanceState);
+                break;
+            case ID_MULTI_TEXT_INPUT_DIALOG:
+                showMultiTextInputDialog(savedInstanceState);
                 break;
         }
     }
@@ -202,6 +208,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                 .setConfirmButton(android.R.string.ok, new LovelyTextInputDialog.OnTextInputConfirmListener() {
+                    @Override
+                    public void onTextInputConfirmed(String text) {
+                        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .setSavedInstanceState(savedInstanceState)
+                .show();
+    }
+
+
+    private void showMultiTextInputDialog(Bundle savedInstanceState) {
+        new LovelyTextInputMultilineDialog(this, R.style.EditTextTintTheme)
+                .setTopColorRes(R.color.darkDeepOrange)
+                .setTitle(R.string.text_input_title)
+                .setIcon(R.drawable.ic_assignment_white_36dp)
+                .setInstanceStateHandler(ID_TEXT_INPUT_DIALOG, saveStateHandler)
+                .setInputFilter(R.string.text_input_error_message, new LovelyTextInputMultilineDialog.TextFilter() {
+                    @Override
+                    public boolean check(String text) {
+                        return text.matches("\\w+");
+                    }
+                })
+                .setConfirmButton(android.R.string.ok, new LovelyTextInputMultilineDialog.OnTextInputConfirmListener() {
                     @Override
                     public void onTextInputConfirmed(String text) {
                         Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
