@@ -12,7 +12,7 @@ This library is a set of simple wrapper classes that are aimed to help you easil
 ## Gradle 
 Add this into your dependencies block.
 ```
-compile 'com.yarolegovich:lovely-dialog:1.0.7'
+ implementation 'com.github.praveenb:lovelydialog:1.0.35v'
 ```
 
 ## Wiki
