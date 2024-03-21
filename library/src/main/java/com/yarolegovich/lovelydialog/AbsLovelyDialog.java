@@ -11,6 +11,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.text.HtmlCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,7 +66,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
 
     public T setMessage(CharSequence message) {
         messageView.setVisibility(View.VISIBLE);
-        messageView.setText(message);
+        messageView.setText(HtmlCompat.fromHtml(message.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY));
         return (T) this;
     }
 
