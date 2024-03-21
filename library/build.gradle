@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
 
 group='com.github.praveenb'
 
@@ -10,8 +9,12 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 1038
-        versionName "1.0.38"
+        versionCode 1039
+        versionName "1.0.39"
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
